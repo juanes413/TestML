@@ -8,6 +8,7 @@ import UIKit
 
 extension UISearchBar {
     
+    //Extension para cambiar los colores de los elementos del UISearchController
     public func setNewcolor(color: UIColor) {
         
         barTintColor = color

@@ -6,13 +6,15 @@
 //
 import Foundation
 
+//Este modelo es el minimo viable para esta prueba, para el buscador
+
 // MARK: - DataML
-struct SearchData {
+struct SearchData: Decodable {
     let results: [Result]
 }
 
 // MARK: - Result
-struct Result {
+struct Result: Decodable {
     let id: String
     let title: String
     let price: Int
@@ -23,12 +25,12 @@ struct Result {
 
 
 // MARK: - Prices
-struct Prices {
+struct Prices: Decodable {
     let prices: [Price]
 }
 
 
-struct Price {
+struct Price: Decodable {
     let type: String
     let amount: Int
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F37523B2742C7620003D909 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37523A2742C7620003D909 /* SearchViewModel.swift */; };
+		5F37523E2742CD9A0003D909 /* APISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37523D2742CD9A0003D909 /* APISearch.swift */; };
 		5F3AF78B2741B8AD0017E9E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AF78A2741B8AD0017E9E5 /* AppDelegate.swift */; };
 		5F3AF78D2741B8AD0017E9E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AF78C2741B8AD0017E9E5 /* SceneDelegate.swift */; };
 		5F3AF78F2741B8AD0017E9E5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AF78E2741B8AD0017E9E5 /* SearchViewController.swift */; };
@@ -17,6 +19,8 @@
 		5F3AF7AC2741B8AE0017E9E5 /* Test_MLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AF7AB2741B8AE0017E9E5 /* Test_MLUITests.swift */; };
 		5F3AF7AE2741B8AE0017E9E5 /* Test_MLUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AF7AD2741B8AE0017E9E5 /* Test_MLUITestsLaunchTests.swift */; };
 		5F3AF7BD2741BAC60017E9E5 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3AF7BC2741BAC60017E9E5 /* SearchData.swift */; };
+		5FA0F61727430AF400AF6D02 /* SearchItemUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA0F61627430AF400AF6D02 /* SearchItemUITableViewCell.xib */; };
+		5FA0F61927430B2700AF6D02 /* SearchItemUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0F61827430B2700AF6D02 /* SearchItemUITableViewCell.swift */; };
 		5FB28A042742ABEB0072749A /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB28A032742ABEB0072749A /* UISearchBar+Extension.swift */; };
 		AE8DC83E558F2ACA9922ADBE /* Pods_Test_ML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C3E069D988988352BE2D32D /* Pods_Test_ML.framework */; };
 		E37D1CD7857D5A71DB2BBD5A /* Pods_Test_ML_Test_MLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6BE3419DBD0B640E0FBC27 /* Pods_Test_ML_Test_MLUITests.framework */; };
@@ -44,6 +48,8 @@
 		0C3E069D988988352BE2D32D /* Pods_Test_ML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_ML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FEB62ECF4BAF1AB9E14B1A /* Pods_Test_MLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_MLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E046F1C8F89AA9233E54BC /* Pods-Test MLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test MLTests.debug.xcconfig"; path = "Target Support Files/Pods-Test MLTests/Pods-Test MLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F37523A2742C7620003D909 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		5F37523D2742CD9A0003D909 /* APISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISearch.swift; sourceTree = "<group>"; };
 		5F3AF7872741B8AD0017E9E5 /* Test ML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test ML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3AF78A2741B8AD0017E9E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F3AF78C2741B8AD0017E9E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 		5F3AF7AB2741B8AE0017E9E5 /* Test_MLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_MLUITests.swift; sourceTree = "<group>"; };
 		5F3AF7AD2741B8AE0017E9E5 /* Test_MLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_MLUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5F3AF7BC2741BAC60017E9E5 /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
+		5FA0F61627430AF400AF6D02 /* SearchItemUITableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemUITableViewCell.xib; sourceTree = "<group>"; };
+		5FA0F61827430B2700AF6D02 /* SearchItemUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemUITableViewCell.swift; sourceTree = "<group>"; };
 		5FB28A032742ABEB0072749A /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 		76355FCECA4325B80923A691 /* Pods-Test ML-Test MLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test ML-Test MLUITests.debug.xcconfig"; path = "Target Support Files/Pods-Test ML-Test MLUITests/Pods-Test ML-Test MLUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7DD8FE44AB4A607E28377819 /* Pods-Test MLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test MLTests.release.xcconfig"; path = "Target Support Files/Pods-Test MLTests/Pods-Test MLTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,8 +123,15 @@
 				52E046F1C8F89AA9233E54BC /* Pods-Test MLTests.debug.xcconfig */,
 				7DD8FE44AB4A607E28377819 /* Pods-Test MLTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F37523C2742CD880003D909 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5F37523D2742CD9A0003D909 /* APISearch.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5F3AF77E2741B8AD0017E9E5 = {
@@ -144,11 +159,12 @@
 		5F3AF7892741B8AD0017E9E5 /* Test ML */ = {
 			isa = PBXGroup;
 			children = (
+				5F37523C2742CD880003D909 /* Services */,
 				5FB28A022742ABCA0072749A /* Extension */,
 				5F3AF7BB2741BAA70017E9E5 /* Models */,
 				5F3AF7BE2741BACE0017E9E5 /* ViewModels */,
 				5F3AF7C02741BB050017E9E5 /* Controllers */,
-				5F3AF7BF2741BAE00017E9E5 /* Util */,
+				5FA0F61527430AD900AF6D02 /* Cells */,
 				5F3AF78A2741B8AD0017E9E5 /* AppDelegate.swift */,
 				5F3AF78C2741B8AD0017E9E5 /* SceneDelegate.swift */,
 				5F3AF7932741B8AE0017E9E5 /* Assets.xcassets */,
@@ -186,15 +202,9 @@
 		5F3AF7BE2741BACE0017E9E5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5F37523A2742C7620003D909 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		5F3AF7BF2741BAE00017E9E5 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 		5F3AF7C02741BB050017E9E5 /* Controllers */ = {
@@ -204,6 +214,15 @@
 				5F3AF7902741B8AD0017E9E5 /* Main.storyboard */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5FA0F61527430AD900AF6D02 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5FA0F61627430AF400AF6D02 /* SearchItemUITableViewCell.xib */,
+				5FA0F61827430B2700AF6D02 /* SearchItemUITableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5FB28A022742ABCA0072749A /* Extension */ = {
@@ -225,6 +244,7 @@
 				5F3AF7832741B8AD0017E9E5 /* Sources */,
 				5F3AF7842741B8AD0017E9E5 /* Frameworks */,
 				5F3AF7852741B8AD0017E9E5 /* Resources */,
+				4D41ACD275D7714215B8CA76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +282,7 @@
 				5F3AF7A32741B8AE0017E9E5 /* Sources */,
 				5F3AF7A42741B8AE0017E9E5 /* Frameworks */,
 				5F3AF7A52741B8AE0017E9E5 /* Resources */,
+				5BFC7A0212FF662182FE707E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA0F61727430AF400AF6D02 /* SearchItemUITableViewCell.xib in Resources */,
 				5F3AF7972741B8AE0017E9E5 /* LaunchScreen.storyboard in Resources */,
 				5F3AF7942741B8AE0017E9E5 /* Assets.xcassets in Resources */,
 				5F3AF7922741B8AD0017E9E5 /* Main.storyboard in Resources */,
@@ -388,6 +410,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4D41ACD275D7714215B8CA76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test ML/Pods-Test ML-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test ML/Pods-Test ML-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test ML/Pods-Test ML-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BFC7A0212FF662182FE707E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test ML-Test MLUITests/Pods-Test ML-Test MLUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test ML-Test MLUITests/Pods-Test ML-Test MLUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test ML-Test MLUITests/Pods-Test ML-Test MLUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A0EA4E4249A752010FC54FD8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,9 +473,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F37523B2742C7620003D909 /* SearchViewModel.swift in Sources */,
 				5F3AF78F2741B8AD0017E9E5 /* SearchViewController.swift in Sources */,
 				5FB28A042742ABEB0072749A /* UISearchBar+Extension.swift in Sources */,
 				5F3AF78B2741B8AD0017E9E5 /* AppDelegate.swift in Sources */,
+				5F37523E2742CD9A0003D909 /* APISearch.swift in Sources */,
+				5FA0F61927430B2700AF6D02 /* SearchItemUITableViewCell.swift in Sources */,
 				5F3AF7BD2741BAC60017E9E5 /* SearchData.swift in Sources */,
 				5F3AF78D2741B8AD0017E9E5 /* SceneDelegate.swift in Sources */,
 			);
@@ -603,9 +662,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Test ML/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -631,9 +692,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Test ML/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

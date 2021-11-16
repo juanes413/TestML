@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ynb-pu-IWK">
-                                <rect key="frame" x="0.0" y="310.33333333333331" width="390" height="135.33333333333331"/>
+                                <rect key="frame" x="0.0" y="300.33333333333331" width="390" height="155.66666666666669"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="niA-Af-L6l">
                                         <rect key="frame" x="0.0" y="0.99999999999999645" width="390" height="62.333333333333329"/>
@@ -30,14 +30,14 @@
                                             <constraint firstAttribute="height" constant="64" id="tI2-om-mDR"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hD7-vx-Mdy">
-                                        <rect key="frame" x="0.0" y="74" width="390" height="20.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No se obtuvo una respuesta valida, por favor intenta de nuevo." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hD7-vx-Mdy">
+                                        <rect key="frame" x="0.0" y="74" width="390" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9H-f5-TEs">
-                                        <rect key="frame" x="0.0" y="104.33333333333337" width="390" height="31"/>
+                                        <rect key="frame" x="0.0" y="124.66666666666669" width="390" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Reintentar"/>
                                         <connections>
@@ -77,7 +77,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tQR-Sd-W4s"/>
                     <connections>
-                        <outlet property="labelEmpty" destination="ATW-5u-CaO" id="idC-aJ-qO0"/>
+                        <outlet property="labelEmpty" destination="Sp8-gp-tPB" id="ull-7i-MJa"/>
                         <outlet property="tableView" destination="ATW-5u-CaO" id="off-Cf-Ar6"/>
                         <outlet property="viewError" destination="ynb-pu-IWK" id="Or4-zD-FQF"/>
                     </connections>

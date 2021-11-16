@@ -6,23 +6,45 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var labelEmpty: UITableView!
+    @IBOutlet weak var labelEmpty: UILabel!
     @IBOutlet weak var viewError: UIStackView!
     
+    //Reintentar busqueda
     @IBAction func reloadSearch(_ sender: UIButton) {
-        reloadSearch()
+        newSearch()
     }
     
     let searchController = UISearchController(searchResultsController: nil)
-    var results = [SearchData]()
+    var results = [Result]()
+    
+    var productsViewModel: SearchViewModel?
+    
+    lazy var viewModel = {
+        SearchViewModel(viewModelToViewBinding: self)
+    }()
+    
+    private enum ReuseIdentifiers: String {
+        case searchItemUITableViewCell
+    }
+    
+    // Formato para mostrar el precio de un producto
+    let currencyFormatter: NumberFormatter = {
+        let formatter =  NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = "."
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Se inicializan los componentes UI
         configureSearchBar()
         configureTableView()
     }
@@ -36,6 +58,7 @@ class SearchViewController: UIViewController {
         searchController.dismiss(animated: true, completion: nil)
     }
     
+    //Apenas muestre la pantalla me enfoque el buscador
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.async {
@@ -43,21 +66,23 @@ class SearchViewController: UIViewController {
         }
     }
 }
-
+// MARK: - UISearchBar
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        reloadSearch()
+        newSearch()
     }
     
-    
-    private func reloadSearch() {
-        setVisibilityEmpty(hidden: true)
-        setVisibilityNoFoundResults(hidden: true)
+    //Metodo para generar una nueva busqueda
+    private func newSearch() {
+        self.results.removeAll()
+        self.reloadData()
+        self.setVisibilityEmpty(hidden: true)
+        self.setVisibilityNoFoundResults(hidden: true)
+        
         if let searchText = searchController.searchBar.text?.trimmingCharacters(in:.whitespacesAndNewlines), searchText.count > 0 {
             searchController.searchBar.resignFirstResponder()
             searchProducts(searchText: searchText)
@@ -68,27 +93,69 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
         }
     }
     
+    //Invocacion del services (API)
     private func searchProducts(searchText: String) {
-        print(searchText)
+        viewModel.searchFromService(searchText: searchText)
     }
     
 }
-
+// MARK: - ModelToViewBinding
+extension SearchViewController: ServicesViewModelToViewBinding {
+    
+    //
+    func searchResult(results: SearchData) {
+        self.results = results.results
+        
+        if (self.results.isEmpty) {
+            DispatchQueue.main.async {
+                self.setVisibilityNoFoundResults(hidden: false)
+            }
+        }
+        
+        self.reloadData()
+    }
+    
+    //Si hay un error al consumir el servicio se muestra un error en pantalla y un boton para refrescar
+    func searchResultError() {
+        self.results.removeAll()
+        self.reloadData()
+        setVisibilityEmpty(hidden: false)
+    }
+    
+}
+// MARK: - UITableView
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.searchItemUITableViewCell.rawValue, for: indexPath) as? SearchItemUITableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let item = results[indexPath.row]
+        
+        cell.imageViewThumbnail.sd_setImage(with: URL(string: item.thumbnail), placeholderImage: UIImage(), options: [], completed: nil)
+        cell.labelTitle.text = item.title
+        if let str = currencyFormatter.string(from: NSNumber(value: item.price)) {
+            cell.labelPrice.text = "$ \(str)"
+        }
+        
+        return cell
     }
     
 }
-
+// MARK: - UI
 extension SearchViewController {
     
+    //Configuracion UI, se agrega un searchcontroller para el buscador
     private func configureSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = true
@@ -107,17 +174,31 @@ extension SearchViewController {
         self.definesPresentationContext = true
     }
     
+    //Configuracion de la tableView
     private func configureTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
         self.tableView.allowsMultipleSelection = false
+        self.tableView.estimatedRowHeight = UITableView.automaticDimension
+        self.tableView.rowHeight = 108
+        
+        self.tableView.register(UINib(nibName: "SearchItemUITableViewCell", bundle: nil), forCellReuseIdentifier: ReuseIdentifiers.searchItemUITableViewCell.rawValue)
     }
     
+    //Refrescar informacion
+    private func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    //Mostrar u ocultar, vista de cuando hay un error al invocar el servicio
     private func setVisibilityEmpty(hidden: Bool){
         viewError.isHidden = hidden
     }
     
+    //Mostrar u ocultar, label sin resultados
     private func setVisibilityNoFoundResults(hidden: Bool){
         labelEmpty.isHidden = hidden
     }
