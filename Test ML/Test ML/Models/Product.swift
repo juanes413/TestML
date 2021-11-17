@@ -18,6 +18,7 @@ struct Product: Codable {
     let acceptsMercadopago: Bool
     let internationalDeliveryMode: String
     let attributes: [Attribute]
+    let warranty: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,6 +34,7 @@ struct Product: Codable {
         case acceptsMercadopago = "accepts_mercadopago"
         case internationalDeliveryMode = "international_delivery_mode"
         case attributes
+        case warranty
     }
 }
 

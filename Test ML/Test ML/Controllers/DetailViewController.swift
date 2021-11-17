@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var labelOriginalPrice: UILabel!
     @IBOutlet weak var labelDescription: UILabel!
+    @IBOutlet weak var labelCondition: UILabel!
+    @IBOutlet weak var labelWarranty: UILabel!
     
     @IBAction func openAtrributes(_ sender: UIButton) {
         openAttributes()
@@ -116,11 +118,14 @@ extension DetailViewController {
             
             if let priceOriginal = product.originalPrice, priceOriginal != product.price, let str = currencyFormatter.string(from: NSNumber(value: priceOriginal)) {
                 let attributedString = NSMutableAttributedString(string: "$ \(str)")
-                attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length))
+                attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributedString.length))
                 
                 labelOriginalPrice.attributedText = attributedString
                 labelOriginalPrice.isHidden = false
             }
+            
+            labelCondition.isHidden = product.condition != "new"
+            labelWarranty.text = product.warranty
         }
     }
     
