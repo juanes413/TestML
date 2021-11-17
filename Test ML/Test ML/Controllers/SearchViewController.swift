@@ -72,6 +72,7 @@ class SearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let index = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
         }
