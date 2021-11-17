@@ -140,7 +140,10 @@ extension SearchViewController: ServicesViewModelToViewBinding {
     func serviceError() {
         self.results.removeAll()
         self.reloadData()
-        setVisibilityEmpty(hidden: false)
+        
+        DispatchQueue.main.async {
+            self.setVisibilityEmpty(hidden: false)
+        }
     }
     
 }

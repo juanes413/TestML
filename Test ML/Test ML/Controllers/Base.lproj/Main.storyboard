@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="amP-sY-hbH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -121,7 +122,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 2.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjA-nS-2s8">
-                                                <rect key="frame" x="8" y="308.33333333333331" width="294" height="38"/>
+                                                <rect key="frame" x="8" y="308.33333333333331" width="286" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="BMz-N1-icU"/>
                                                 </constraints>
@@ -175,8 +176,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFa-Mr-igK">
-                                                <rect key="frame" x="318" y="317" width="64" height="18"/>
+                                                <rect key="frame" x="318" y="308.33333333333331" width="64" height="38"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="Gz4-cE-PFX"/>
                                                     <constraint firstAttribute="width" constant="64" id="fpO-hk-hyC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
@@ -250,11 +252,10 @@
                                             <constraint firstAttribute="trailing" secondItem="8SB-Ew-KNE" secondAttribute="trailing" constant="16" id="3aJ-VA-Llz"/>
                                             <constraint firstAttribute="trailing" secondItem="dFa-Mr-igK" secondAttribute="trailing" constant="8" id="4TD-lc-NUg"/>
                                             <constraint firstItem="gjA-nS-2s8" firstAttribute="top" secondItem="oPc-bC-mvS" secondAttribute="bottom" constant="8" id="6YG-YX-Tmz"/>
-                                            <constraint firstItem="dFa-Mr-igK" firstAttribute="top" secondItem="oPc-bC-mvS" secondAttribute="bottom" constant="16.670000000000002" id="6fx-6Q-Jrd"/>
+                                            <constraint firstItem="dFa-Mr-igK" firstAttribute="top" secondItem="oPc-bC-mvS" secondAttribute="bottom" constant="8" id="6fx-6Q-Jrd"/>
                                             <constraint firstAttribute="trailing" secondItem="nqv-1A-uyC" secondAttribute="trailing" constant="8" id="7Ae-i3-add"/>
                                             <constraint firstItem="kDf-Cb-ZKv" firstAttribute="top" secondItem="KuC-z3-zZJ" secondAttribute="top" constant="8" id="ADp-Pe-TxS"/>
                                             <constraint firstItem="oPc-bC-mvS" firstAttribute="top" secondItem="kDf-Cb-ZKv" secondAttribute="bottom" constant="16" id="AeB-Bp-aED"/>
-                                            <constraint firstItem="dFa-Mr-igK" firstAttribute="leading" secondItem="gjA-nS-2s8" secondAttribute="trailing" constant="16" id="G07-vb-vTS"/>
                                             <constraint firstItem="8SB-Ew-KNE" firstAttribute="leading" secondItem="KuC-z3-zZJ" secondAttribute="leading" constant="16" id="I2E-Vy-tci"/>
                                             <constraint firstAttribute="trailing" secondItem="aCH-lX-CHp" secondAttribute="trailing" constant="8" id="Mm8-mq-5vh"/>
                                             <constraint firstItem="yc4-he-Tul" firstAttribute="leading" secondItem="KuC-z3-zZJ" secondAttribute="leading" constant="8" id="NtF-cg-BKS"/>
@@ -280,6 +281,7 @@
                                             <constraint firstItem="Btm-T0-MkU" firstAttribute="top" secondItem="gqT-b9-82U" secondAttribute="bottom" constant="32" id="ugW-Q0-eYa"/>
                                             <constraint firstItem="kDf-Cb-ZKv" firstAttribute="leading" secondItem="KuC-z3-zZJ" secondAttribute="leading" constant="8" id="x3e-XD-vIB"/>
                                             <constraint firstItem="hcg-gm-Pfg" firstAttribute="top" secondItem="Btm-T0-MkU" secondAttribute="bottom" constant="10" id="yC6-f4-ZCR"/>
+                                            <constraint firstItem="dFa-Mr-igK" firstAttribute="leading" secondItem="gjA-nS-2s8" secondAttribute="trailing" constant="24" id="zRO-PH-dbe"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
