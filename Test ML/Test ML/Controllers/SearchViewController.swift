@@ -19,18 +19,20 @@ class SearchViewController: UIViewController {
         newSearch()
     }
     
-    let searchController = UISearchController(searchResultsController: nil)
-    var results = [Result]()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var results = [Result]()
     
-    var productsViewModel: SearchViewModel?
+    private var productsViewModel: SearchViewModel?
     
-    lazy var viewModel = {
+    private lazy var viewModel = {
         SearchViewModel(viewModelToViewBinding: self)
     }()
     
     private enum ReuseIdentifiers: String {
         case searchItemUITableViewCell
     }
+    
+    private var firstTime = true
     
     // Formato para mostrar el precio de un producto
     let currencyFormatter: NumberFormatter = {
@@ -58,13 +60,30 @@ class SearchViewController: UIViewController {
         searchController.dismiss(animated: true, completion: nil)
     }
     
-    //Apenas muestre la pantalla me enfoque el buscador
+    //Apenas muestre la pantalla se enfoca el buscador
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.async {
-            self.searchController.searchBar.becomeFirstResponder()
+        if firstTime {
+            DispatchQueue.main.async {
+                self.searchController.searchBar.becomeFirstResponder()
+                self.firstTime = false
+            }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            let item = results[self.tableView.indexPathForSelectedRow!.row]
+            destination.productResult = item
+        }
+    }
+    
 }
 // MARK: - UISearchBar
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
@@ -72,6 +91,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
     }
     
+    //Este metodo se llama cuando se da tap al boton buscar del teclado
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         newSearch()
     }
@@ -83,6 +103,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
         self.setVisibilityEmpty(hidden: true)
         self.setVisibilityNoFoundResults(hidden: true)
         
+        //Se verifica que el texto que se desea buscar sea de por lo menos una letra
         if let searchText = searchController.searchBar.text?.trimmingCharacters(in:.whitespacesAndNewlines), searchText.count > 0 {
             searchController.searchBar.resignFirstResponder()
             searchProducts(searchText: searchText)
@@ -102,8 +123,8 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
 // MARK: - ModelToViewBinding
 extension SearchViewController: ServicesViewModelToViewBinding {
     
-    //
-    func searchResult(results: SearchData) {
+    //Este metodo se ejecuta cuando el servicio devuelve el resultado de la busqueda
+    func serviceSearchResult(results: SearchData) {
         self.results = results.results
         
         if (self.results.isEmpty) {
@@ -115,8 +136,8 @@ extension SearchViewController: ServicesViewModelToViewBinding {
         self.reloadData()
     }
     
-    //Si hay un error al consumir el servicio se muestra un error en pantalla y un boton para refrescar
-    func searchResultError() {
+    //Si hay un error al consumir el servicio se muestra un mensaje en pantalla y un boton para reitentar la busqueda nuevamente
+    func serviceError() {
         self.results.removeAll()
         self.reloadData()
         setVisibilityEmpty(hidden: false)
@@ -149,6 +170,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "openDetailProduct", sender: self)
     }
     
 }

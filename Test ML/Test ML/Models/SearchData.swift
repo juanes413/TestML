@@ -20,7 +20,7 @@ struct Result: Decodable {
     let price: Int
     let prices: Prices
     let permalink: String
-    let thumbnail: String
+    let thumbnail: String    
 }
 
 

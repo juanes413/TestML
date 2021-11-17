@@ -1,22 +1,32 @@
 PODS:
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
+  - ImageSlideshow/SDWebImage (1.9.2):
+    - ImageSlideshow/Core
+    - SDWebImage (>= 3.7)
   - SDWebImage (5.12.0):
     - SDWebImage/Core (= 5.12.0)
   - SDWebImage/Core (5.12.0)
   - SkeletonView (1.25.1)
 
 DEPENDENCIES:
+  - ImageSlideshow (~> 1.9.0)
+  - ImageSlideshow/SDWebImage
   - SDWebImage
   - SkeletonView
 
 SPEC REPOS:
   trunk:
+    - ImageSlideshow
     - SDWebImage
     - SkeletonView
 
 SPEC CHECKSUMS:
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   SDWebImage: 4ea20cca2986adc5aacde07aa686742fd4c67a37
   SkeletonView: 77079530e1348a72f48b79ae30dcb966c1b18b6a
 
-PODFILE CHECKSUM: 6417f5445bedd716954fde87fe9411f3d5cddb59
+PODFILE CHECKSUM: b11642028f0a96dce314df25bb9dd9cb367599fe
 
 COCOAPODS: 1.10.2
