@@ -11,6 +11,8 @@ import Foundation
 class MockSearchViewModel: SearchViewModel {
     
     var searchData: SearchData?
+    var product: Product?
+    var description: Descripcion?
     
     override init(viewModelToViewBinding: ServicesViewModelToViewBinding, apiServices: APIService = APIService()) {
         super.init(viewModelToViewBinding: viewModelToViewBinding)
@@ -24,5 +26,18 @@ class MockSearchViewModel: SearchViewModel {
         }
     }
     
+    override func detailProductFromService(idProduct: String) {
+        if let product = self.product {
+            viewModelToViewBinding?.serviceDetailProduct(product: product)
+        } else {
+            viewModelToViewBinding?.serviceError()
+        }
+    }
+    
+    override func descripcionProductFromService(idProduct: String) {
+        if let descripcion = self.description {
+            viewModelToViewBinding?.serviceDescriptionProduct(description: descripcion)
+        }
+    }
 
 }

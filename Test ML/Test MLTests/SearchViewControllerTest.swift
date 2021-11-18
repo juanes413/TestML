@@ -11,8 +11,8 @@ import XCTest
 class SearchViewControllerTests: XCTestCase {
 
     private var sut: SearchViewController!
-    private var mockSearchViewModel: MockSearchViewModel?
-    
+    private var viewModel: MockSearchViewModel!
+
     override func setUp() {
         super.setUp()
         
@@ -23,16 +23,29 @@ class SearchViewControllerTests: XCTestCase {
         }
         sut = viewController
         sut.loadViewIfNeeded()
-        mockSearchViewModel = MockSearchViewModel(viewModelToViewBinding: sut)
         
+        viewModel = MockSearchViewModel(viewModelToViewBinding: sut)
+        
+        sut.viewModel = viewModel
     }
     
     func test_newSearchEmpty() {
+        sut.searchController.searchBar.text = ""
+        sut.newSearch()
+    }
+    
+    func test_newSearchError() {
         sut.searchController.searchBar.text = "test search"
         sut.newSearch()
     }
     
-    func test_newSearch() {
+    func test_newSearchSuccess() {
+        let result = Result(id: "123456789", title: "Producto x", price: 1000, permalink: "", thumbnail: "")
+        var results = [Result]()
+        results.append(result)
+        
+        viewModel.searchData = SearchData(results: results)
+        sut.searchController.searchBar.text = "test search"
         sut.newSearch()
     }
     

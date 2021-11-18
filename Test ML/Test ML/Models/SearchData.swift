@@ -18,17 +18,9 @@ struct Result: Decodable {
     let id: String
     let title: String
     let price: Int
-    let prices: Prices
     let permalink: String
     let thumbnail: String    
 }
-
-
-// MARK: - Prices
-struct Prices: Decodable {
-    let prices: [Price]
-}
-
 
 struct Price: Decodable {
     let type: String

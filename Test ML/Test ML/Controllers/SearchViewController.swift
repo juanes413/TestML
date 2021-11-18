@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
     
     private var productsViewModel: SearchViewModel?
     
-    private lazy var viewModel = {
+    lazy var viewModel = {
         SearchViewModel(viewModelToViewBinding: self)
     }()
     

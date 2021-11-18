@@ -26,6 +26,7 @@ class AttributesUITableViewController: UITableViewController {
         self.tableView.allowsMultipleSelection = false
         self.tableView.allowsSelection = false
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.tableView.backgroundColor = .white
         //self.tableView.estimatedRowHeight = UITableView.automaticDimension
         //self.tableView.rowHeight = UITableView.automaticDimension
         //self.tableView.register(AttributeUITableViewCell2.self, forCellReuseIdentifier: ReuseIdentifiers.attributeUITableViewCell.rawValue)
@@ -51,7 +52,7 @@ class AttributesUITableViewController: UITableViewController {
         
         cell.labelName.text = item.name
         cell.labelValue.text = item.valueName
-        cell.contentView.backgroundColor = (index%2 == 0) ? .systemGray5 : nil
+        cell.contentView.backgroundColor = (index%2 == 0) ? UIColor(red: 197.0/255.0, green: 197.0/255.0, blue: 197.0/255.0, alpha: 1.0) : .white
                 
         return cell
     }

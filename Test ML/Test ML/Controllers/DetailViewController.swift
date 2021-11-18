@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
     var product: Product?
     var viewDidAppear = false
     
-    private lazy var viewModel = {
+    lazy var viewModel = {
         SearchViewModel(viewModelToViewBinding: self)
     }()
     
