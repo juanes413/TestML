@@ -30,7 +30,7 @@ class SearchViewControllerTests: XCTestCase {
     }
     
     func test_newSearchEmpty() {
-        sut.searchController.searchBar.text = ""
+        sut.searchController.searchBar.text = "a"
         sut.newSearch()
     }
     
