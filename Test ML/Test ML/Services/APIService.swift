@@ -6,8 +6,16 @@
 //
 import Foundation
 
-class APIService: NSObject {
+class APIService {
     
+    private let session: URLSession
+
+    // By using a default argument (in this case .shared) we can add dependency
+    // injection without making our app code more complicated.
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+
     let searchBaseUrl = "https://api.mercadolibre.com/sites/MCO/search?q="
     let productBaseUrl = "https://api.mercadolibre.com/items/"
     
@@ -20,7 +28,7 @@ class APIService: NSObject {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 completion(false, nil)
@@ -52,7 +60,7 @@ class APIService: NSObject {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 completion(false, nil)
@@ -84,7 +92,7 @@ class APIService: NSObject {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 completion(false, nil)

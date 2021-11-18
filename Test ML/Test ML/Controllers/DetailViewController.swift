@@ -71,7 +71,7 @@ class DetailViewController: UIViewController {
     }
     
     //Abrir vista de atributos
-    private func openAttributes() {
+    func openAttributes() {
         guard let attributes = product?.attributes, !attributes.isEmpty else {
             return
         }

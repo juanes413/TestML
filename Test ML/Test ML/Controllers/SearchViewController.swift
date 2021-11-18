@@ -19,7 +19,7 @@ class SearchViewController: UIViewController {
         newSearch()
     }
     
-    private let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
     private var results = [Result]()
     
     private var productsViewModel: SearchViewModel?
@@ -98,7 +98,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     //Metodo para generar una nueva busqueda
-    private func newSearch() {
+    func newSearch() {
         self.results.removeAll()
         self.reloadData()
         self.setVisibilityEmpty(hidden: true)

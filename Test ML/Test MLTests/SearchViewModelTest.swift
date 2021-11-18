@@ -1,14 +1,13 @@
 //
-//  Test_MLTests.swift
+//  SearchViewModelTest.swift
 //  Test MLTests
 //
-//  Created by Juan Esteban Pelaez on 14/11/21.
+//  Created by Juan Esteban Pelaez on 17/11/21.
 //
 
 import XCTest
-@testable import Test_ML
 
-class Test_MLTests: XCTestCase {
+class SearchViewModelTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

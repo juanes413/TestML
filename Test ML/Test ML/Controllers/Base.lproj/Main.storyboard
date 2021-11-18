@@ -13,7 +13,7 @@
         <!--Search View Controller-->
         <scene sceneID="6W8-7h-elW">
             <objects>
-                <viewController id="eki-Sp-TLg" customClass="SearchViewController" customModule="Test_ML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchViewController" id="eki-Sp-TLg" customClass="SearchViewController" customModule="Test_ML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cbi-uN-Lfw">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,7 +94,7 @@
         <!--Detail View Controller-->
         <scene sceneID="8HX-qp-83d">
             <objects>
-                <viewController id="Jf8-Y5-ULQ" customClass="DetailViewController" customModule="Test_ML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewController" id="Jf8-Y5-ULQ" customClass="DetailViewController" customModule="Test_ML" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TsP-ir-g1a">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

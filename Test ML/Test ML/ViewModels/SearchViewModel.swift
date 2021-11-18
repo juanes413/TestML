@@ -9,12 +9,12 @@ import Foundation
 
 class SearchViewModel {
     
-    private var viewModelToViewBinding: ServicesViewModelToViewBinding?
-    private var apiServices: APIService!
+    var viewModelToViewBinding: ServicesViewModelToViewBinding?
+    private var apiServices: APIService
     
-    init(viewModelToViewBinding: ServicesViewModelToViewBinding) {
+    init(viewModelToViewBinding: ServicesViewModelToViewBinding, apiServices:APIService = APIService()) {
         self.viewModelToViewBinding = viewModelToViewBinding
-        self.apiServices = APIService()
+        self.apiServices = apiServices
     }
     
     //Invocar servicio api para el buscador
